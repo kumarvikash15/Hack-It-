@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SnooPi-Dash</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="/wetty/hterm_all.js"></script>
+    <script src="/wetty/socket.io/socket.io.js"></script>
+    <script src="/wetty/wetty.js"></script>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 20px;
+            font: monospace;
+            font-weight: bold;
+            background: #f1f1f1;
+            font-family: monospace;
+            font-size: 20px;
+
+        }
+        #terminal {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 40%;
+            padding-right: 15px;
+
+        }
+        .frame{
+          height: 200px;
+        }
+        .abc{
+          float: right;
+        }
+        .panel-body{
+          height: 350px;
+          border-top:3px solid #ffffff;
+
+        }
+        h2{
+          font-family: monospace;
+          color: blue;
+          font-weight: bolder;
+        }
+        .pi{
+          color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="text-center">
+      <h2>Snoo<span class="pi">Pi</span></h2>
+      <h4>A <span class="pi">Pen</span> Test FrameWork</h4>
+    </div>
+
+      <ul class="nav nav-tabs nav-justified">
+        <li class="active"><a data-toggle="tab" href="#home">INTRO</a></li>
+        <li><a data-toggle="tab" href="#menu1">STEP 1</a></li>
+        <li><a data-toggle="tab" href="#menu2">STEP 2</a></li>
+        <li><a data-toggle="tab" href="#menu3">STEP 3</a></li>
+        <li><a data-toggle="tab" href="#menu4">STEP 4</a></li>
+        <li><a data-toggle="tab" href="#menu5">STEP 5</a></li>
+        <li><a data-toggle="tab" href="#menu6">STEP 6</a></li>
+
+        <li><a data-toggle="tab" href="#menu7">STEP 7</a></li>
+
+      </ul>
+      <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h3>Introduction</h3>
+                  </div>
+                  <div class="col-md-3">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Documentation</button>
+                  </div>
+                </div><hr>
+                <div class="row">
+                  <div class="col-md-6">
+
+                                    <p>This application is meant to test for vulnerability in SAMBA CIFS servers. For More <a href="">SambaNews</a></p>
+
+                                    <p>Steps involved</p>
+                                    <ul>
+                                      <li>Gaining Aceess of Org's Internal Network.</li>
+                                      <li>Network Mapping for vulnerable servers.</li>
+                                      <li>Checking for Vulnerability in Samba Servers.</li>
+
+
+                                    </ul>
+
+                  </div>
+                  <div class="col-md-6">
+                    <li>Maintaining Access to the System.</li>
+                    <li>Spreading Access throughout the Network.</li>
+                    <li>Clearing Log (HAppy Hunting)</li>
+                    <li>Gaining Access to the Victims System.</li>
+
+                  </div>
+                </div>
+                <!-- Recommend -->
+
+                 <!-- Modal -->
+                 <div class="modal fade" id="myModal" role="dialog">
+                   <div class="modal-dialog">
+
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         <h4 class="modal-title">Suggestion</h4>
+                       </div>
+                       <div class="modal-body">
+                         <a href="download.php?file=detailed idea.docx">detailed idea</a><br>
+                         <a href="download.php?file=Installation Guide .docx">Installation Guide</a><br>
+                         <a href="download.php?file=Learn how to use the app for admin.docx">Learn how to use the app for admin</a><br>
+                         <a href="download.php?file=Learn how to use the app for user.docx">Learn how to use the app for user</a>
+
+
+
+                       </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+
+              </div>
+            </div>
+          </div>
+
+<!-- STEP-1 -->
+
+          <div id="menu1" class="tab-pane fade">
+            <div class="panel panel-default">
+              <div class="panel-body" style="font-family:monospace;">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h3>Wifi-Access through Raspberry Pi</h3>
+                  </div>
+                  <div class="col-md-3">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal1">Recommendation</button>
+                  </div>
+                </div><hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h5>Methodology Involved:</h5>
+                      <ul>
+                        <li>Monitoring the Traffic</li>
+                        <li>Analyzing the Traffic</li>
+                        <li>Cracking the Traffic</li>
+                        <li>Penetrating the Network</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <h5>Tools Involved</h5>
+                      <ul>
+                        <li>Aircrack-ng</li>
+                        <li>Airodump-ng</li>
+                      </ul>
+                      <h5>Commands:</h5>
+                      <ul>
+                        <li>./wifi.sh</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                <!-- Recommend -->
+
+                 <!-- Modal -->
+                 <div class="modal fade" id="myModal1" role="dialog">
+                   <div class="modal-dialog">
+
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         <h4 class="modal-title">Suggestion</h4>
+                       </div>
+                       <div class="modal-body">
+
+                         <h3>encryption method of wifi:</h3>
+                         <li>WEP(Wired Equivalent Privacy)</li>
+                         <li>Wi-Fi Protected Access (WPA)</li>
+                         <li>Wi-Fi Protected Access version 2 (WPA2)</li>
+                         <h3>How to secure: </h3>
+                         <li>DHCP should be static</li>
+                         <li>Choose a Wise SSID</li>
+                         <li>Separate Your Private Network From Your Guest Network</li>
+                         <li>Uniquely Connect Users To Your Wireless Network</li>
+                         <li>Activate encryption</li>
+                         <li>Apply Mac filters</li>
+                         <li>update router firmware</li>
+                       </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+
+              </div>
+            </div>
+          </div>
+
+<!-- STEP-2 -->
+
+          <div id="menu2" class="tab-pane fade">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h3>Network Mapping</h3>
+                  </div>
+                  <div class="col-md-3">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal2">Recommendation</button>
+                  </div>
+                </div><hr>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Methodology Involved:</h5>
+                    <ul>
+                      <li>Port Scanning</li>
+                      <li>Checking If Vulnerable System Exists</li>
+                      <li>Banner Grabbing for Version Detetction</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Commands Involved</h5>
+                    <ul>
+                      <li>./nmap.sh (victim's ip)</li>
+                      <li>./nmap-vulncheck.sh (Victim's ip)</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Recommend -->
+                 <!-- Modal -->
+                 <div class="modal fade" id="myModal2" role="dialog">
+                   <div class="modal-dialog">
+
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         <h4 class="modal-title">Suggestion</h4>
+                       </div>
+                       <div class="modal-body">
+                         <li>Shutdown Ports When not in Use</li>
+                         <li>Apply packet filters to prevent Network Mapping</li>
+                         <li>Allow only Authorized devices for Port Scanning</li>
+                       </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+
+<!-- STEP-3 -->
+
+          <div id="menu3" class="tab-pane fade">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h3>Exploiting SAMBA Server</h3>
+                  </div>
+                  <div class="col-md-3">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal3">Recommendation</button>
+                  </div>
+                </div><hr>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Methodology Involved:</h5>
+                    <ul>
+                      <li>Checking SMB Shares</li>
+                      <li>Checking for Writable Drives</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Script Involved:</h5>
+                    <ul>
+                      <li>./smbshare.sh (Victim's ip) (victim's username)</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Recommend -->
+                 <!-- Modal -->
+                 <div class="modal fade" id="myModal3" role="dialog">
+                   <div class="modal-dialog">
+
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         <h4 class="modal-title">Suggestion</h4>
+                       </div>
+                       <div class="modal-body">
+                         <li>Set:
+
+  wide links = no<br>
+
+In the [global] section of your smb.conf and restart smbd to eliminate this
+problem.</li>
+                       <li>Update SAMBA Regularly</li>
+
+                       </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+              </div>
+            </div>
+           </div>
+
+
+<!-- STEP-4 -->
+
+           <div id="menu4" class="tab-pane fade">
+             <div class="panel panel-default">
+               <div class="panel-body">
+                 <div class="row">
+                   <div class="col-md-9">
+                     <h3>Gaining Access to the Victim's System</h3>
+                   </div>
+                   <div class="col-md-3">
+                       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal4">Recommendation</button>
+                   </div>
+                 </div><hr>
+                 <div class="row">
+                   <div class="col-md-6">
+                     <h5>Methodology Involved:</h5>
+                     <ul>
+                       <li>Exploiting Symlink Directory Traversal Flaw</li>
+                       <li>Mounting Network File Shares</li>
+                       <li>Use of Org. Specific Passphrase on Private Keys </li>
+
+                     </ul>
+                   </div>
+                   <div class="col-md-6">
+                     <h5>Script Involved:</h5>
+                     <ul>
+                       <li>./smbshare.sh (Victim's ip) (victim's username)</li>
+                     </ul>
+                   </div>
+                 </div>
+                 <!-- Recommend -->
+                <!-- Modal -->
+                  <div class="modal fade" id="myModal4" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Suggestion</h4>
+                        </div>
+                        <div class="modal-body">
+                          <li>Update System Regularly </li>
+                          <li>Install Patch for Vulnerability (if available)</li>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+             </div>
+            </div>
+
+
+<!-- STEP-5 -->
+
+            <div id="menu5" class="tab-pane fade">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-9">
+                      <h3>Maintaining Access to the Victim's System</h3>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal5">Recommendation</button>
+                    </div>
+                  </div><hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <h5>Methodology Involved</h5>
+                      <ul>
+                        <li>Using SSH as Backdoor (Advance Exploitation)</li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6">
+                      <h5>Script Involved:</h5>
+                      <ul>
+                        <li>./smbshare.sh (Victim's ip) (victim's username)</li>
+                      </ul>
+
+                    </div>
+                  </div>
+                  <!-- Recommend -->
+                   <!-- Modal -->
+                   <div class="modal fade" id="myModal5" role="dialog">
+                     <div class="modal-dialog">
+
+                       <!-- Modal content-->
+                       <div class="modal-content">
+                         <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                           <h4 class="modal-title">Suggestion</h4>
+                         </div>
+                         <div class="modal-body">
+                           <li>Check for Unused ports </li>
+                           <li>Check for Logs</li>
+                           <li>Monitoring of Unusual Activities</li>
+                           <li>Use Reliable Tools for Network Monitoring</li>
+                         </div>
+                         <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                </div>
+              </div>
+             </div>
+
+
+<!-- STEP-6 -->
+
+                 <div id="menu6" class="tab-pane fade">
+                           <div class="panel panel-default">
+                             <div class="panel-body">
+                               <div class="row">
+                                 <div class="col-md-9">
+                                   <h3>Spreading Access throughout the Network</h3>
+                                 </div>
+                                 <div class="col-md-3">
+                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal6">Recommendation</button>
+                                 </div>
+                               </div><hr>
+                               <div class="row">
+                                 <div class="col-md-6">
+                                   <h5>Methodology Involved</h5>
+                                   <ul>
+                                     <li>User Impersonation Over SSH</li>
+                                   </ul>
+                                 </div>
+                                 <div class="col-md-6">
+                                   <h5>Script Involved:</h5>
+                                   <ul>
+                                     <li>./smbshare.sh (Victim's ip) (victim's username)</li>
+                                   </ul>
+                                 </div>
+                               </div>
+                               <!-- Recommend -->
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal6" role="dialog">
+                                  <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Suggestion</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        <li>Use Hypervisor layer for different Users (Virtualization)</li>
+                                        <li>Monitor Network</li>
+                                        <li>Use of Org. Specific Passphrase on Private Keys </li>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                             </div>
+                           </div>
+                          </div>
+
+
+
+  <!-- STEP-7 -->
+
+                                                                     <div id="menu7" class="tab-pane fade">
+                                                                               <div class="panel panel-default">
+                                                                                 <div class="panel-body">
+                                                                                   <div class="row">
+                                                                                     <div class="col-md-9">
+                                                                                       <h3>Clearing Tracks</h3>
+                                                                                     </div>
+                                                                                     <div class="col-md-3">
+                                                                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal7">Recommendation</button>
+                                                                                     </div>
+                                                                                   </div><hr>
+                                                                                   <div class="row">
+                                                                                     <div class="col-md-6">
+                                                                                       <h5>Methodology Involved:</h5>
+                                                                                       <ul>
+                                                                                         <li>Performing Malicious Activity </li>
+                                                                                         <li>Clearing Access Logs</li>
+                                                                                       </ul>
+
+                                                                                     </div>
+                                                                                     <div class="col-md-6">
+                                                                                       <h5>Script Involved:</h5>
+                                                                                       <ul>
+                                                                                         <li>./reset_log.sh</li>
+
+                                                                                       </ul>
+                                                                                     </div>
+                                                                                   </div>
+
+                                                                                   <!-- Recommend -->
+                                                                                    <!-- Modal -->
+                                                                                    <div class="modal fade" id="myModal7" role="dialog">
+                                                                                      <div class="modal-dialog">
+
+                                                                                        <!-- Modal content-->
+                                                                                        <div class="modal-content">
+                                                                                          <div class="modal-header">
+                                                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                            <h4 class="modal-title">Suggestion</h4>
+                                                                                          </div>
+                                                                                          <div class="modal-body">
+                                                                                            <li>Create Log Backup to Different Places</li>
+                                                                                            <li>Analyse Logs at Quick Intervals</li>
+
+                                                                                          </div>
+                                                                                          <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                 </div>
+                                                                               </div>
+                                                                              </div>
+
+
+
+
+
+
+        </div>
+  </div>
+      <div id="terminal"></div>
+</body>
+
+</html>
